@@ -15,8 +15,7 @@ export class CreateEditComment {
     avatar: '',
     id: ''
   };
-  // reviewerName: string;
-  // comment: string;
+
   @Input() isEditMode = false;
 
   @Output() commentUpdated = new EventEmitter<Review>();

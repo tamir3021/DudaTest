@@ -21,13 +21,9 @@ export class HomePage {
   }
 
   updateCommentsList(comment: Review) {
-    if (this.isEditMode) {
-
-    }
-    else {
+    if (!this.isEditMode) {
       this.comments.push(comment);
       localStorage.setItem('comments', JSON.stringify(this.comments));
-      console.log(this.comments);
     }
   }
 
