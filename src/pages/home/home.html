@@ -1,14 +1,17 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar text-center>
     <ion-title>
-      Ionic Blank
+      User reviews
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <user-comment *ngFor="let comment of comments"
+     [review]="comment"
+     (commentDeleted)="deleteComment($event)"
+     (editModeClicked)="updateEditMode($event)">
+
+  </user-comment>
+  <create-edit-comment *ngIf="!isEditMode" (commentUpdated)="updateCommentsList($event)"></create-edit-comment>
 </ion-content>

@@ -6,11 +6,15 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { CreateEditComment } from '../pages/home/createEditComment/createEditComment';
+import { UserComment } from '../pages/home/comment/comment';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    CreateEditComment,
+    UserComment
   ],
   imports: [
     BrowserModule,
@@ -19,7 +23,9 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    CreateEditComment,
+    UserComment
   ],
   providers: [
     StatusBar,

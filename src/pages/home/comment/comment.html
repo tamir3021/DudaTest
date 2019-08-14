@@ -1,0 +1,17 @@
+<ion-card *ngIf="!isEditMode">
+  <ion-item>
+    <ion-avatar item-start>
+      <img [src]="review.avatar">
+    </ion-avatar>
+    <h2>{{review.name}}</h2>
+    <p>{{review.comment}}</p>
+    <div class="icons">
+      <ion-icon name="create" (click)="editcomment()"></ion-icon>
+      <ion-icon name="trash" (click)="deleteComment()"></ion-icon>
+    </div>
+  </ion-item>
+</ion-card>
+
+<create-edit-comment *ngIf="isEditMode" [currentReview]="review" [isEditMode]="isEditMode" (commentUpdated)="commentUpdated()">
+
+</create-edit-comment>

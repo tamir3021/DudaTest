@@ -1,0 +1,23 @@
+<ion-card>
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <ion-input
+          type="text"
+          placeholder="Your name"
+          name="reviewerName"
+          [(ngModel)]="currentReview.name">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-textarea
+          placeholder="Your comment"
+          autoGrow="false"
+          [(ngModel)]="currentReview.comment"
+          name="comment">
+        </ion-textarea>
+      </ion-item>
+    </ion-list>
+    <button class="addBtn" (click)="updateReview()" ion-button item-right>{{isEditMode ? 'Save' : 'Add'}}</button>
+  </ion-card-content>
+</ion-card>
