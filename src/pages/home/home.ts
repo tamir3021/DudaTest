@@ -15,12 +15,18 @@ export class HomePage {
 
   }
 
+  ionViewDidLoad() {
+    const savedComments = localStorage.getItem('comments');
+    this.comments = JSON.parse(savedComments);
+  }
+
   updateCommentsList(comment: Review) {
     if (this.isEditMode) {
-      
+
     }
     else {
       this.comments.push(comment);
+      localStorage.setItem('comments', JSON.stringify(this.comments));
       console.log(this.comments);
     }
   }
@@ -33,6 +39,7 @@ export class HomePage {
     const commentToDelete = this.comments.findIndex(comment => comment.id == commentId);
     if (commentToDelete > -1) {
       this.comments.splice(commentToDelete, 1);
+      localStorage.setItem('comments', JSON.stringify(this.comments));
     }
   }
 
